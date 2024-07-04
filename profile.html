@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eco-Nest</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <img src="./images/d90b388d413448d984d7dde1c432d70a-removebg-preview.png" />
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#products">Best-Selling Products</a></li>
+            <li><a href="./index.html#deals">Shop deals</a></li>
+
+            <div class="profile">
+                <button id="your_profile" class="dropbtn" onclick="myFunction()">User </button>
+                <div id="myDropdown" class="dropdown-content">
+                    <div class="user">
+                    <a href="./profile.html"><img src ="./images/user.png" />Profile</a>
+                    </div>
+                    <a href="#"><img src="./images/shop.png"/>Orders</a>
+                    <a href="#">Logout <img src="./images/logout.png" /></a>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+<h2>Account Details</h2>
+<div class="user-section">
+    <div class="image-container">
+        <img src="./images/cpm35 2023-11-12 215639.537.JPG" id="user-image"/>
+        <div class="edit-overlay">
+            <label for="file-input">Edit Image</label>
+            <input type="file" id="file-input" accept="image/*"/>
+        </div>
+    </div>
+        <div class="user-para">
+            <h3>Username: aanchalmehta9</h3>
+            <h4>E-mail: aanchalmehta.9114@gmail.com</h4>
+            <h4>Phone no.: +91 8879276820</h4>
+        </div>
+</div>
+
+<h2>Address details</h2>
+<div id="address-display" class="user-address">
+    <h3>102, Mahavir Majestik Co-op Society, Next to DMart, <br>LBS Road, Kanjurmarg West, 400078, Mumbai, Maharashtra</h3>
+</div>
+<div id="address-edit" style="display: none;">
+    <textarea id="address-textarea">102, Mahavir Majestik Co-op Society, Next to DMart, LBS Road, Kanjurmarg West, 400078, Mumbai, Maharashtra</textarea>
+    <button onclick="saveAddress()" class="save-btn">Save</button>
+</div>
+<div class="edit-address-overlay" onclick="editAddress()">Edit Address</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+//for editing the picture ->
+document.getElementById('file-input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('user-image').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+//editing address section ->
+document.getElementById('file-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('user-image').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+function editAddress() {
+    document.getElementById('address-display').style.display = 'none';
+    document.getElementById('address-edit').style.display = 'block';
+}
+
+function saveAddress() {
+    const newAddress = document.getElementById('address-textarea').value;
+    document.getElementById('address-display').innerHTML = `<h3>${newAddress.replace(/\n/g, '<br>')}</h3>`;
+    document.getElementById('address-display').style.display = 'block';
+    document.getElementById('address-edit').style.display = 'none';
+}
+</script>
+</body>
+</html>

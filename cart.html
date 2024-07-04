@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - The Eco-Nest</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="content">
+        <h2>Your Cart</h2>
+        <div id="cart-container">
+            <ul id="cart-items"></ul>
+        </div>
+        <div id="total-amount-container">
+            <h3>Total: ₹<span id="total-amount">0.00</span></h3>
+        </div>
+        <a href="index.html">Continue Shopping</a>
+        <a href="#">Proceed to checkout</a>
+    </div>
+
+    <div class="suggest">
+        <h4>Recommended for you</h4>
+        
+    </div>
+    <div class="cards-container" id="cards-container">
+        <!-- Product cards will be inserted here by JavaScript -->
+    </div>
+    <!-- <script src="desc.js"></script> -->
+    <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartItemsList = document.getElementById('cart-items');
+    const totalAmountElement = document.getElementById('total-amount');
+
+    let totalAmount = 0;
+
+    cartItems.forEach((item, index) => {
+        const li = document.createElement('li');
+        
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = item.name;
+        img.className = 'cart-item-image';
+
+        const itemDetails = document.createElement('div');
+        itemDetails.className = 'cart-item-details';
+        itemDetails.innerHTML = `${item.name} - ${item.price} (${item.quantity} pcs)`;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.className = 'delete-item';
+        deleteButton.dataset.index = index;
+        deleteButton.addEventListener('click', function() {
+            removeFromCart(index);
+        });
+
+        const itemTotalCost = document.createElement('div');
+        itemTotalCost.className = 'item-total-cost';
+
+        // Parse the price and quantity as numbers
+        const price = parseFloat(item.price.replace(/[^\d.-]/g, ''));
+        const quantity = parseInt(item.quantity, 10);
+
+        // Debugging output
+        console.log(`Item: ${item.name}, Price: ${item.price}, Quantity: ${item.quantity}`);
+        console.log(`Parsed Price: ${price}, Parsed Quantity: ${quantity}`);
+
+        // Check if price and quantity are valid numbers
+        if (!isNaN(price) && !isNaN(quantity)) {
+            const totalCost = price * quantity;
+            itemTotalCost.textContent = `Total: ${totalCost.toFixed(2)}`;
+            totalAmount += totalCost;
+        } else {
+            itemTotalCost.textContent = 'Invalid price or quantity';
+        }
+
+        li.appendChild(img);
+        li.appendChild(itemDetails);
+        li.appendChild(deleteButton);
+        li.appendChild(itemTotalCost);
+        cartItemsList.appendChild(li);
+    });
+
+    totalAmountElement.textContent = ` ${totalAmount.toFixed(2)}`;
+
+    function removeFromCart(index) {
+        cartItems.splice(index, 1);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        location.reload(); // Refresh the page to reflect changes
+    }
+});
+        const products = [
+            {
+                id: 1,
+                name: "Double door Fridge",
+                image: "./images/fridge-removebg-preview.png",
+                rating: "images/rating-removebg-preview (1).png",
+                price: "₹50,000",
+                desc: "High quality refrigerator with the latest cooling technology.",
+            },
+            {
+                id: 2,
+                name: "Single door refrigerator",
+                image: "images/single fridge.avif",
+                rating: "images/rating-removebg-preview (1).png",
+                price: "₹35,000",
+                desc: "Efficient refrigerator with multiple cooling modes.",
+            },
+            {
+                id: 3,
+                name: "French door refrigerator",
+                image: "images/french door.png",
+                rating: "images/rating-removebg-preview (1).png",
+                price: "₹90,000",
+                desc: "Compact microwave with advanced features.",
+            },
+            {
+                id: 4,
+                name: "Top freezer refrigerator",
+                image: "images/top freezer.avif",
+                rating: "images/rating-removebg-preview (1).png",
+                price: "₹85,000",
+                desc: "Energy efficient fridge with a sleek design.",
+            },
+            {
+                id: 5,
+                name: "Quad door refrigerator",
+                image: "images/quad_door-removebg-preview.png",
+                rating: "images/rating-removebg-preview (1).png",
+                price: "₹95,000",
+                desc: "Top loading washing machine with smart features.",
+            },
+            {
+                id: 90,
+                name: "Dry Mixture Grinder",
+                image: "images/dry_g-removebg-preview.png",
+                rating: "images/rating-removebg-preview (1).png",
+                price: "₹25,000",
+                desc: "Top cullinary product with cutting edge technology.",
+            },
+            {
+                id: 91,
+                name: "Wet Mixture Grinder",
+                image: "images/wet_g-removebg-preview.png",
+                rating: "images/rating-removebg-preview (1).png",
+                price: "₹35,000",
+                desc: "Top cullinary product with cutting edge technology.",
+            },
+            {
+                id: 92,
+                name: "Juicer Mixture Grinder Three in One",
+                image: "images/three-removebg-preview.png",
+                rating: "images/rating-removebg-preview (1).png",
+                price: "₹45,000",
+                desc: "Top cullinary product with cutting edge technology.",
+            },
+        ];
+
+        const container = document.getElementById('cards-container');
+
+        products.forEach(product => {
+            const card = document.createElement('a');
+            card.classList.add('card');
+            card.href = `desc.html?id=${product.id}`;
+            card.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div class="card-content">
+                    <h2 class="card-title">${product.name}</h2>
+                    <p class="card-description">${product.desc}</p>
+                    <p class="card-price">${product.price}</p>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

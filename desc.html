@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Description - The Eco-Nest</title>
+    <link rel="stylesheet" href="desc.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <img src="images/d90b388d413448d984d7dde1c432d70a-removebg-preview.png" />
+            <li><a href="#">About</a></li>
+            <li><a href="./fridge.html">Home</a></li>
+            <li>
+                <form id="btn">
+                    <input type="text" placeholder="Search..." />
+                    <button type="submit">
+                        <i class="fa fa-search">
+                            <a href="#"><img src="images/search-removebg-preview.png" /></a>
+                        </i>
+                    </button>
+                </form>
+            </li>
+        </ul>
+        <div class="nav-right">
+            <div class="cart">
+                <button id="cart-button">
+                    <img src="./images/cart-removebg-preview.png" alt="Cart">
+                </button>
+                <div id="cart-contents" class="cart-contents">
+                    <h3>Your Cart</h3>
+                    <ul id="cart-items"></ul>
+                </div>
+            </div>        
+            <div class="profile">
+                <button id="your_profile" class="dropbtn" onclick="myFunction()">User</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <div class="user">
+                        <a href="#"><img src="images/user.png" />Profile</a>
+                    </div>
+                    <a href="#"><img src="images/shop.png" />Orders</a>
+                    <a href="#">Logout <img src="images/logout.png" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="product-description">
+            <img id="product-image" src="" alt="Product Image" />
+            <div class="product-details">
+                <h2 id="product-name"></h2>
+                <p id="product-rating">Rating:
+                    <img src="images/rating-removebg-preview (1).png" alt="Rating" />
+                </p>
+                <p id="product-price"></p>
+                <p id="product-desc"></p>
+                <p>Quantity:</p>
+                <input type="number" id="product-quantity" min="1" max="10" value="1">
+                <div id="cart">
+                    <button id="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="foot">
+        <h4>Rooted in comfort, blooming with possibilities.</h4>
+        <p>Customer care: +91 1234567890 | Email: econest.customercare@gmail.com</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="desc.js"></script>
+</body>
+</html>

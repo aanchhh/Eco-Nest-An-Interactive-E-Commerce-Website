@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eco-Nest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <img src="./images/d90b388d413448d984d7dde1c432d70a-removebg-preview.png" />
+            <li><a href="./about.html">About</a></li>
+            <div class="drop">
+            <li><a href="#products">Categories</a></li>
+            <div class="btndrop">
+                <ul>
+                    <li><a href="#deals">Deals of the Day</a></li>
+                    <li><a href="#products">Best-Selling Products</a></li>
+                    <li><a href="./fridge.html">Refrigerators</a></li>
+                    <li><a href="./j and m.html">Juicers & Grinders</a></li>
+                    <li><a>Microwaves & Ovens</a></li>
+                    <li><a>Washing Machines</a></li>
+                    <li><a>Gas Cooktops</a></li>
+                    <li><a>Espresso Machines</a></li>
+                </ul>
+            </div>
+            </div>
+            <!-- <li><button input="text" placeholder="Search..." id="btn" type="button"></button></li> -->
+            <li>
+                <form id="btn" >
+                    <input type="text" name="query" id="items" placeholder="Search...">
+                    <button type="submit">
+                        <i class="fa fa-search">
+                            <a href="#"><img src="./images/search-removebg-preview.png"/></a>
+                        </i>
+                    </button>
+                </form>
+            </li>
+        </ul>
+        <div class="nav-right">
+            <div class="cart">
+                <button id="cart-button"><a href="./cart.html"><img src="./images/cart-removebg-preview.png" /></a></button>
+                <div id="cart-contents" class="cart-contents">
+                    <h3>Cart</h3>
+                    <ul id="cart-items"></ul>
+                    <a href="./cart.html">View Cart</a>
+                </div>
+            </div>
+        <div class="profile">
+            <button id="your_profile" class="dropbtn" onclick="myFunction()">User </button>
+            <div id="myDropdown" class="dropdown-content">
+                <div class="user">
+                <a href="./profile.html"><img src ="./images/user.png" />Profile</a>
+                </div>
+                <a href="#"><img src="./images/shop.png"/>Orders</a>
+                <a href="#">Logout <img src="./images/logout.png" /></a>
+              </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="main" class="slider">
+        <div class="slide slide1">
+        <h3>Welcome Eco - Nest Online store!</h3>
+        <p> Where comfort meets earth-conscious design.<br> Where quality meets reliability. Explore our extensive collection of <br> refrigerators,
+          washing machines, microwaves & ovens, trusted and <br> cherished by millions of satisfied customers across India.
+          <br>Join our growing family of happy users and<br>experience the best in home appliances today!<br></p>
+        <img src="./images/bosch.jpg" />
+        </div>
+        <div class="slide slide2">
+            <h3>Fuel Your Wellness: Eco-Nest Mixers, Juicers <br>& Grinders: Fresh, Fast, Easy!</h3>
+            <p>Elevate your culinary skills with our innovative mixers, juicers, & grinders.<br>
+                Perfect for preparing fresh juices, smooth pastes, and delightful blends,<br>
+                our appliances combine power with precision. </p>
+            <img src="./images/m and j.jpg" />
+        </div>
+        <div class="slide slide3">
+            <h3>Experience the Excellence: <br>Discover Why Our Fridges are India's<br>Top Choice!</h3>
+            <p>Our refrigerators are among the best-selling appliances<br>throughout India.
+               Combining cutting-edge technology with<br>sleek design, our fridges offer unparalleled performance & reliability.<br>
+               <!-- Enjoy fresher food, reduced electricity bills, and the confidence of owning<br>a top-rated product trusted by millions.<br> -->
+               </p>
+            <img src="./images/fridges.jpg" />
+        </div>
+        <div class="slide slide4">
+            <h3>ECO - NEST <br>Comfort that grows naturally. <br></h3>
+            <p>By prioritizing user comfort and crafting appliances inspired by nature,<br>this earthy brand has blossomed in the Indian home appliance market.<br>
+               Now available in Chroma, Vijay Sales, Reliance stores all across India<br>also in brand-owned stores in Mumbai and Delhi.<br>
+               To know more about our brand, please check out the "About" section.<br>
+               <!-- Enjoy fresher food, reduced electricity bills, and the confidence of owning<br>a top-rated product trusted by millions.<br> -->
+               </p>
+               <img src="./images/d90b388d413448d984d7dde1c432d70a-removebg-preview.png">
+        </div>
+        <button id="btn1" class="arrow"><</button>
+        <button id="btn2" class="arrow">></button>
+    </div>
+    <br>
+    <br>
+    <div class="deals" id="deals">
+        <h3>Deals of the day</h3>
+        <h4 class="right-stuff">Offers end in:</h4>
+        <div class="timer" id="timer"></div>
+    </div>
+    <div class="carousel">
+        <div class="carousel-container" id="carousel-container">
+            <div class="carousel-item">
+                <img src="./images/fridge-removebg-preview.png" alt="Item 1">
+                <div class="hover-box">
+                    <a href="./fridge.html" target="_blank" class="view-offer">View Offer</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/juicer.jpg" alt="Item 2">
+                <div class="hover-box">
+                    <a href="./j and m.html" target="_blank" class="view-offer">View Offer</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/microwave-removebg-preview.png" alt="Item 3">
+                <div class="hover-box">
+                    <a href="#" class="view-offer">View Offer</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/washingmachine-removebg-preview.png" alt="Item 4">
+                <div class="hover-box">
+                    <a href="#" class="view-offer">View Offer</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/cooktop.png" alt="Item 5">
+                <div class="hover-box">
+                    <a href="#" class="view-offer">View Offer</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/espresso.jpg" alt="Item 6">
+                <div class="hover-box">
+                    <a href="#" class="view-offer">View Offer</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/dry_g-removebg-preview.png" alt="Item 6">
+                <div class="hover-box">
+                    <a href="#" class="view-offer">View Offer</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/wet_g-removebg-preview.png" alt="Item 6">
+                <div class="hover-box">
+                    <a href="#" class="view-offer">View Offer</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
+        </div>
+    </div>
+    <div id="products">
+        <h2 class="heading">Our Best-Selling Products</h2>
+        <div class="product-container">
+            <div class="box">
+                <button title="View products"><a href="./fridge.html">
+                    <img src="./images/fridge-removebg-preview.png" alt="Refrigerator" />
+                    <h4>Refrigerators</h4>
+                    <p>Rating: <img src="./images/rating-removebg-preview (1).png" alt="Rating" /></p>
+                </a>
+                </button>
+            </div>
+    
+            <div class="box">
+                <button title="View products"><a href="./j and m.html">
+                    <img src="./images/juicer.jpg" alt="Juicer and Grinder" />
+                    <h4>Juicers and Grinders</h4>
+                    <p>Rating: <img src="./images/rating-removebg-preview (1).png" alt="Rating" /></p>
+                </a>
+                </button>
+            </div>
+    
+            <div class="box">
+                <button title="View products">
+                    <img src="./images/microwave-removebg-preview.png" alt="Microwave" />
+                    <h4>Microwaves and Ovens</h4>
+                    <p>Rating: <img src="./images/rating-removebg-preview (1).png" alt="Rating" /></p>
+                </button>
+            </div>
+    
+            <div class="box">
+                <button title="View products">
+                    <img src="./images/washingmachine-removebg-preview.png" alt="Washing Machine" />
+                    <h4>Washing Machines</h4>
+                    <p>Rating: <img src="./images/rating-removebg-preview (1).png" alt="Rating" /></p>
+                </button>
+            </div>
+    
+            <div class="box">
+                <button title="View products">
+                    <img src="./images/cooktop.png" alt="Cooktop" />
+                    <h4>Gas Cooktops</h4>
+                    <p>Rating: <img src="./images/rating-removebg-preview (1).png" alt="Rating" /></p>
+                </button>
+            </div>
+    
+            <div class="box">
+                <button title="View products">
+                    <img src="./images/espresso.jpg" alt="Espresso Machine" />
+                    <h4>Espresso Machines</h4>
+                    <p>Rating: <img src="./images/rating-removebg-preview (1).png" alt="Rating" /></p>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <footer class="foot">
+        <h4>Rooted in comfort, blooming with possibilities.</h4>
+        <!-- <h6>Made in India</h6> -->
+        <p>Customer care: +91 1234567890  |  Email: econest.customercare@gmail.com</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
